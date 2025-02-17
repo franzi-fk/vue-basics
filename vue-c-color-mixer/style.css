@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+html,
+body,
+p {
+  margin: 0;
+}
+
+html,
+body,
+#app,
+#body {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 2rem 2.1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label,
+p {
+  font-size: 1.75rem;
+  color: black;
+}
+
+#slider-red {
+  accent-color: red;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+#slider-green {
+  accent-color: green;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+#slider-blue {
+  accent-color: blue;
+  margin-right: 1.25rem;
+  cursor: pointer;
+}
+
+header div:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+
+#btn-random {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+  font-family: monospace;
+  font-size: 1.3rem;
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+#btn-random:hover {
+  background-color: white;
+}

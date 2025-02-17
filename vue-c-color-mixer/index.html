@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Franziska Kiel">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Mixer</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="body" :style="{ 'background-color': hexColor }">
+            <header>
+                <div id="sliders-container">
+                    <label for="slider-red">r</label>
+                    <input type="range" id="slider-red" name="red" min="0" max="255" v-model.number="red">
+
+                    <label for="slider-green">g</label>
+                    <input type="range" id="slider-green" name="green" min="0" max="255" v-model.number="green">
+
+                    <label for="slider-blue">b</label>
+                    <input type="range" id="slider-blue" name="blue" min="0" max="255" v-model.number="blue">
+                </div>
+                <div>
+                    <p id="hex-value">{{ hexColor }}</p>
+                    <button id="btn-random" @click="randomColor">random color</button>
+                </div>
+            </header>
+            <main>
+            </main>
+            <script src="https://unpkg.com/vue@latest"></script>
+            <script src="script.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
