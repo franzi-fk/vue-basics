@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Franziska Kiel">
+    <title>The Simplest Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <main>
+            <div id="header">
+                <h1>my todos</h1>
+                <ul id="filters"></ul>
+            </div>
+            <div id="content">
+                <ul id="list">
+                    <li v-for="todo in todos" :key="todo.id">
+                        <input type="checkbox" :id="'checkbox-'+todo.id" @change="updateTodoState(todo)"
+                            v-model="todo.done">
+                        <label :for="'checkbox-'+todo.id">{{todo.description}}</label>
+                    </li>
+                </ul>
+                <span id="hint-duplicate" v-if="showHint">Todo already exists</span>
+            </div>
+            <div id="container-modify-list">
+                <form id="add-todo" @submit.prevent="addTodo">
+                    <input type="text" id="inp-new-todo" placeholder="enter a new todo..." v-model="userInputNewTodo"
+                        ref="newTodoInput">
+                    <button id="btn-add-todo" class="btn-primary">add</button>
+                </form>
+                <button id="btn-remove-done" class="btn-secondary" @click="removeDoneTodos">remove done todos</button>
+            </div>
+        </main>
+        <script src="https://unpkg.com/vue@latest"></script>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
